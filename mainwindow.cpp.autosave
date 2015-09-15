@@ -242,3 +242,4 @@ void MainWindow::on_negative_pushButton_clicked()
     }
     this->showImage(dst);
 }
+
