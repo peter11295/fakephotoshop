@@ -44,17 +44,24 @@ private slots:
 
     void on_negative_pushButton_clicked();
 
+    void on_contrast_horizontalSlider_valueChanged(int value);
+
+    void on_clear_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
+    cv::Mat realimg;
+
     cv::Mat img;
 
-    void changeColor(const cv::Mat &src,cv::Mat &dst,QVector<int> value);
+    cv::Mat temp;
+
+    void changeColor(const cv::Mat &src, cv::Mat &dst, QVector<int> value);
 
     QImage Mat2QImage(const cv::Mat src);
 
     void showImage(const cv::Mat &src);
-
 
 };
 

@@ -111,7 +111,7 @@ $(OBJECTS) $(LIBS)
 <<
 
 qmake: FORCE
-	@$(QMAKE) -spec win32-msvc2013 "CONFIG+=debug" -o Makefile.Debug fakephotoshop.pro
+	@$(QMAKE) -spec win32-msvc2013 -o Makefile.Debug fakephotoshop.pro
 
 qmake_all: FORCE
 
@@ -294,6 +294,19 @@ debug\moc_mainwindow.cpp: ..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QMainWin
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\imgcodecs\imgcodecs_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\videoio\videoio_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\ml.hpp \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QFileDialog \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qfiledialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qdir.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qfileinfo.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qdialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QString \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QDebug \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QVector \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QImage \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QRgb \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QPixmap \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\cv.h \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\highgui.h \
 		mainwindow.h
 	C:\Qt\5.5\msvc2013\bin\moc.exe $(DEFINES) -D_MSC_VER=1800 -D_WIN32 -IC:/Qt/5.5/msvc2013/mkspecs/win32-msvc2013 -IC:/Users/Tim/Documents/fakephotoshop -IC:/opencv300_x86_vc2013/include -IC:/opencv300_x86_vc2013/include/opencv -IC:/opencv300_x86_vc2013/include/opencv2 -IC:/Qt/5.5/msvc2013/include -IC:/Qt/5.5/msvc2013/include/QtWidgets -IC:/Qt/5.5/msvc2013/include/QtGui -IC:/Qt/5.5/msvc2013/include/QtANGLE -IC:/Qt/5.5/msvc2013/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
 
@@ -472,6 +485,19 @@ debug\main.obj: main.cpp mainwindow.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\imgcodecs\imgcodecs_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\videoio\videoio_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\ml.hpp \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QFileDialog \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qfiledialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qdir.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qfileinfo.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qdialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QString \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QDebug \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QVector \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QImage \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QRgb \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QPixmap \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\cv.h \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\highgui.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QApplication \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qapplication.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qcoreapplication.h \
@@ -635,6 +661,19 @@ debug\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\imgcodecs\imgcodecs_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\videoio\videoio_c.h \
 		..\..\..\..\opencv300_x86_vc2013\include\opencv2\ml.hpp \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QFileDialog \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qfiledialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qdir.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\qfileinfo.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qdialog.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QString \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QDebug \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QVector \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QImage \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QRgb \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtGui\QPixmap \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\cv.h \
+		..\..\..\..\opencv300_x86_vc2013\include\opencv\highgui.h \
 		ui_mainwindow.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtCore\QVariant \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QAction \
@@ -666,13 +705,24 @@ debug\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qstyle.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qtabbar.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qrubberband.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QLabel \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qlabel.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QMenuBar \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qmenubar.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qmenu.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QPushButton \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qpushbutton.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qabstractbutton.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QSlider \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QStatusBar \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qstatusbar.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QToolBar \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qtoolbar.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QVBoxLayout \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qboxlayout.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qlayout.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qlayoutitem.h \
+		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\qgridlayout.h \
 		..\..\..\..\Qt\5.5\msvc2013\include\QtWidgets\QWidget
 
 debug\moc_mainwindow.obj: debug\moc_mainwindow.cpp 

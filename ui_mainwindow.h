@@ -41,11 +41,14 @@ public:
     QPushButton *blur_pushButton;
     QPushButton *save_pushButton;
     QPushButton *negative_pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QSlider *contrast_horizontalSlider;
+    QLabel *label_6;
+    QPushButton *clear_pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -62,7 +65,7 @@ public:
         open_pushButton->setGeometry(QRect(20, 10, 111, 41));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 80, 401, 441));
+        label->setGeometry(QRect(30, 90, 450, 300));
         brightness_horizontalSlider = new QSlider(centralWidget);
         brightness_horizontalSlider->setObjectName(QStringLiteral("brightness_horizontalSlider"));
         brightness_horizontalSlider->setGeometry(QRect(590, 290, 160, 22));
@@ -106,36 +109,52 @@ public:
         save_pushButton->setGeometry(QRect(190, 10, 111, 41));
         negative_pushButton = new QPushButton(centralWidget);
         negative_pushButton->setObjectName(QStringLiteral("negative_pushButton"));
+        negative_pushButton->setEnabled(true);
         negative_pushButton->setGeometry(QRect(530, 110, 111, 41));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(530, 340, 50, 111));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(530, 340, 50, 111));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setFont(font);
         label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         verticalLayout->addWidget(label_3);
 
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font);
         label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         verticalLayout->addWidget(label_4);
 
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setFont(font);
         label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         verticalLayout->addWidget(label_5);
 
+        contrast_horizontalSlider = new QSlider(centralWidget);
+        contrast_horizontalSlider->setObjectName(QStringLiteral("contrast_horizontalSlider"));
+        contrast_horizontalSlider->setGeometry(QRect(590, 240, 160, 22));
+        contrast_horizontalSlider->setToolTipDuration(-1);
+        contrast_horizontalSlider->setMinimum(1);
+        contrast_horizontalSlider->setMaximum(100);
+        contrast_horizontalSlider->setValue(1);
+        contrast_horizontalSlider->setOrientation(Qt::Horizontal);
+        label_6 = new QLabel(centralWidget);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(520, 230, 61, 41));
+        label_6->setFont(font);
+        clear_pushButton = new QPushButton(centralWidget);
+        clear_pushButton->setObjectName(QStringLiteral("clear_pushButton"));
+        clear_pushButton->setGeometry(QRect(350, 10, 111, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -166,6 +185,8 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "\347\264\205\350\211\262\357\274\232", 0));
         label_4->setText(QApplication::translate("MainWindow", "\350\227\215\350\211\262\357\274\232", 0));
         label_5->setText(QApplication::translate("MainWindow", "\347\266\240\350\211\262\357\274\232", 0));
+        label_6->setText(QApplication::translate("MainWindow", "\345\260\215\346\257\224\345\272\246\357\274\232", 0));
+        clear_pushButton->setText(QApplication::translate("MainWindow", "\346\270\205\351\231\244", 0));
     } // retranslateUi
 
 };
