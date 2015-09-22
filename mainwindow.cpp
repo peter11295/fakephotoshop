@@ -79,7 +79,7 @@ void MainWindow::showImage(const cv::Mat &src)
 
 void MainWindow::on_brightness_horizontalSlider_valueChanged(int value)
 {
-    cv::Mat dst(temp);
+    cv::Mat dst=temp;
 
     for(int i = 0 ;i < this->img.rows ; i++)
     {
@@ -103,6 +103,7 @@ void MainWindow::on_brightness_horizontalSlider_valueChanged(int value)
             }
         }
     }
+//    this->temp=dst.clone();
 
     this->showImage(dst);
 }
@@ -133,7 +134,7 @@ void MainWindow::on_grayscale_pushButton_clicked()
     ui->brightness_horizontalSlider->setDisabled(1);
 
     this->showImage(dst);
-    this->temp=dst.clone();
+
 
 }
 
@@ -165,7 +166,7 @@ void MainWindow::changeColor(const cv::Mat &src, cv::Mat &dst, QVector<int> valu
 
 void MainWindow::on_red_horizontalSlider_valueChanged(int value)
 {
-    cv::Mat src(temp);
+    cv::Mat src=temp;
     QVector<int> valueVec(3);
     valueVec[0] = ui->blue_horizontalSlider->value();
     valueVec[1] = ui->green_horizontalSlider->value();
@@ -173,12 +174,13 @@ void MainWindow::on_red_horizontalSlider_valueChanged(int value)
 
     this->changeColor(this->img,src,valueVec);
     this->showImage(src);
+
 
 }
 
 void MainWindow::on_green_horizontalSlider_valueChanged(int value)
 {
-    cv::Mat src(temp);
+    cv::Mat src=temp;
     QVector<int> valueVec(3);
     valueVec[0] = ui->blue_horizontalSlider->value();
     valueVec[1] = ui->green_horizontalSlider->value();
@@ -186,19 +188,21 @@ void MainWindow::on_green_horizontalSlider_valueChanged(int value)
 
     this->changeColor(this->img,src,valueVec);
     this->showImage(src);
+
 
 }
 
 
 void MainWindow::on_blue_horizontalSlider_valueChanged(int value)
 {
-    cv::Mat src(temp);
+    cv::Mat src=temp;
     QVector<int> valueVec(3);
     valueVec[0] = ui->blue_horizontalSlider->value();
     valueVec[1] = ui->green_horizontalSlider->value();
     valueVec[2] = ui->red_horizontalSlider->value();
     this->changeColor(this->img,src,valueVec);
     this->showImage(src);
+
 
 }
 
@@ -239,15 +243,15 @@ void MainWindow::on_save_pushButton_clicked()
 
 void MainWindow::on_negative_pushButton_clicked()
 {
-    cv::Mat src = this->temp;
-    cv::Mat dst(src);
 
-    for(int i = 1 ;i < src.rows-1 ; i++)
+    cv::Mat dst(temp);
+
+    for(int i = 1 ;i < dst.rows-1 ; i++)
     {
-        for(int j = 1 ;j< src.cols-1 ; j++)
+        for(int j = 1 ;j< dst.cols-1 ; j++)
         {
 
-            for(int k = 0;k < src.channels();k++)
+            for(int k = 0;k < dst.channels();k++)
             {
                 dst.at<cv::Vec3b>(i,j)[k] =255-dst.at<cv::Vec3b>(i,j)[k];
             }
@@ -260,9 +264,10 @@ void MainWindow::on_negative_pushButton_clicked()
 
 void MainWindow::on_contrast_horizontalSlider_valueChanged(int value)
 {
-    cv::Mat src = this->img;
+    cv::Mat src = img;
     cv::Mat dst=src.clone();
-    cv::Mat dst2(temp);
+    cv::Mat dst2=temp;
+
     double Delta;
     double a,b;
     int x,y;
@@ -314,12 +319,13 @@ void MainWindow::on_contrast_horizontalSlider_valueChanged(int value)
     }
     this->showImage(dst2);
 
+
 }
 
 void MainWindow::on_clear_pushButton_clicked()
 {
-    this->temp=realimg;
-    this->img=realimg;
+    this->temp=realimg.clone();
+    this->img=realimg.clone();
 
     ui->blur_pushButton->setDisabled(0);
     ui->contrast_horizontalSlider->setDisabled(0);
